@@ -20,12 +20,15 @@ Image Processing API Project
             -tests
                 -helper
                     -reporter.js
-                -index.spec.js
+                -image_routes.spec.js
+                -sharp_function.spec.js
             -utilites
                 -image_routes.js
                 -sharp_function.js
             -index.js
-        -image
+        -images
+            ...
+        -resized_images
             ...
         -node_modules
             ...
@@ -36,7 +39,8 @@ Image Processing API Project
             -tests
                 -helper
                     -reporter.ts
-                -index.spec.ts
+                -image_routes.spec.ts
+                -sharp_function.spec.ts
             -utilites
                 -image_routes.ts
                 -sharp_function.ts
@@ -84,15 +88,18 @@ Image Processing API Project
 
     -run the project
         after doing the above open the terminal and run:
-            1-npm run prettier
-            2-npm run build
-            3-node build or nodemon build
+            1-npm run prettier --> improve and fix the error of the style of code
+            2-npm run build --> build the code
+            3-npm run test --> build and test the code
+            4-node build or nodemon build --> run the project
 
-        you can run this script and it will run all the 3 scripts above:
+        you can run this script and it will run all the 4 scripts above:
             npm run start
 
     -structure of request
         http://localhost:3000/image/api?filename=<string>&width=<number>&height=<number>
+
+        ex. http://localhost:3000/image/api?filename=palmtunnel&width=200&height=200
 
 .Technologies
     nodejs

@@ -6,14 +6,8 @@ const port = 3000;
 const app = express();
 
 //configre the server to listen to port and running it
-app.listen(port, ()=>{
+app.listen(port, ():void=>{
     console.log(`srever running on port ${port}`);
-});
-
-//get route to test the server is running or no
-app.get('/',(req,res)=>{
-    console.log('hello to get route //');
-    res.send('test');
 });
 
 //using middelware to get route of the image/api from another file

@@ -39,29 +39,34 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var path_1 = __importDefault(require("path"));
-var sharp_1 = __importDefault(require("sharp"));
-var output;
-function resize(input, w, h) {
-    return __awaiter(this, void 0, void 0, function () {
-        var inputPath, e_1;
+var index_1 = __importDefault(require("../index"));
+var supertest_1 = __importDefault(require("supertest"));
+//suite for endpoint image/api for passing 200 ok and 404 not fount
+var api = (0, supertest_1.default)(index_1.default);
+describe('endpoint /image/api test', function () {
+    it('request the /image/api pass with 200 ok', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var res;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 2, , 3]);
-                    inputPath = path_1.default.join(process.cwd(), "images/".concat(input, ".jpg"));
-                    output = path_1.default.join(process.cwd(), "resized_images/resized_".concat(input, ".jpg"));
-                    return [4 /*yield*/, (0, sharp_1.default)(inputPath).resize(w, h).toFile(output)];
+                case 0: return [4 /*yield*/, api.get('/image/api?filename=encenadaport&width=500&height=205')];
                 case 1:
-                    _a.sent();
-                    return [3 /*break*/, 3];
-                case 2:
-                    e_1 = _a.sent();
-                    console.log(e_1);
-                    throw new Error("".concat(e_1));
-                case 3: return [2 /*return*/];
+                    res = _a.sent();
+                    expect(res.status).toBe(200);
+                    return [2 /*return*/];
             }
         });
-    });
-}
-exports.default = resize;
+    }); }),
+        it('request the /image/api pass with 404', function () { return __awaiter(void 0, void 0, void 0, function () {
+            var res;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, api.get('/image/api')];
+                    case 1:
+                        res = _a.sent();
+                        expect(res.status).toBe(404);
+                        return [2 /*return*/];
+                }
+            });
+        }); });
+});
+//http://localhost:3000/image/api?filename=encenadaport&width=500&height=205

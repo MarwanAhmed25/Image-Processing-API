@@ -39,29 +39,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var path_1 = __importDefault(require("path"));
-var sharp_1 = __importDefault(require("sharp"));
-var output;
-function resize(input, w, h) {
-    return __awaiter(this, void 0, void 0, function () {
-        var inputPath, e_1;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 2, , 3]);
-                    inputPath = path_1.default.join(process.cwd(), "images/".concat(input, ".jpg"));
-                    output = path_1.default.join(process.cwd(), "resized_images/resized_".concat(input, ".jpg"));
-                    return [4 /*yield*/, (0, sharp_1.default)(inputPath).resize(w, h).toFile(output)];
-                case 1:
-                    _a.sent();
-                    return [3 /*break*/, 3];
-                case 2:
-                    e_1 = _a.sent();
-                    console.log(e_1);
-                    throw new Error("".concat(e_1));
-                case 3: return [2 /*return*/];
-            }
-        });
+var sharp_function_1 = __importDefault(require("../utilites/sharp_function"));
+it('sharp function pass test', function () { return __awaiter(void 0, void 0, void 0, function () {
+    var res;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, (0, sharp_function_1.default)('fjord', 200, 200)];
+            case 1:
+                res = _a.sent();
+                expect(res).not.toThrowError;
+                return [2 /*return*/];
+        }
     });
-}
-exports.default = resize;
+}); });

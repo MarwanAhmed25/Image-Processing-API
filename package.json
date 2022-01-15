@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prettier": "eslint . --ext .ts  --fix",
-    "build": "npm run prettier && npx tsc",
+    "prettier": "prettier --config .prettierrc src/**/*.ts --write",
+    "lint": "eslint . --ext .ts  --fix",
+    "build": "npx tsc",
     "test": "npm run build && jasmine",
-    "start": "npm run test && nodemon build"
+    "start": "node build/index.js",
+    "dev":"npm run prettier && npm run lint && npm run test && npm run start"
   },
   "author": "",
   "license": "ISC",
@@ -23,17 +25,17 @@
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jasmine": "^4.0.2",
+    "jasmine-spec-reporter": "^7.0.0",
     "jasmine-ts": "^0.4.0",
     "prettier": "^2.5.1",
+    "supertest": "^6.2.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
   },
   "dependencies": {
     "express": "^4.17.2",
     "express-validator": "^6.14.0",
-    "jasmine": "^4.0.2",
-    "jasmine-spec-reporter": "^7.0.0",
-    "sharp": "^0.29.3",
-    "supertest": "^6.2.1"
+    "sharp": "^0.29.3"
   }
 }

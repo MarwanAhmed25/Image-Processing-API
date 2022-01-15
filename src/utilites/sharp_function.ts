@@ -1,17 +1,20 @@
+import path from 'path';
 import sharp from 'sharp';
 
+let output: string;
 
-//async function to take input{the image} and get output{the resized image}
-async function resizeImage(inputImage:string, outputImagePath:string, width:number, hieght:number){
-    try{
-        const image = await sharp(inputImage).resize(width,hieght).toFile(outputImagePath);
-    }catch(e){
-        console.log(`sharp function error: ${e}`);
-    
+async function resize(input: string, w: number, h: number): Promise<void> {
+    try {
+        const inputPath: string = path.join(process.cwd(), `images/${input}.jpg`);
+
+        output = path.join(process.cwd(), `resized_images/resized_${input}.jpg`);
+
+        await sharp(inputPath).resize(w, h).toFile(output);
+    } catch (e) {
+        console.log(e);
+
+        throw new Error(`${e}`);
     }
 }
 
-//export function to use in another files
-export default {
-    resizeImage
-};
+export default resize;
