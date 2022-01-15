@@ -75,14 +75,15 @@ Image Processing API Project
             "prettier": "^2.5.1",
             "ts-node": "^10.4.0",
             "typescript": "^4.5.4"`
+            "supertest": "^6.2.1"
+            "jasmine": "^4.0.2",
+            "jasmine-spec-reporter": "^7.0.0",
 
         install as Dependencies
             "express": "^4.17.2",
             "express-validator": "^6.14.0",
-            "jasmine": "^4.0.2",
-            "jasmine-spec-reporter": "^7.0.0",
             "sharp": "^0.29.3",
-            "supertest": "^6.2.1"
+            
 
         config scripts for (prettier, eslint, jasmine)
 
