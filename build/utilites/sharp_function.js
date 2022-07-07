@@ -49,8 +49,10 @@ function resize(input, w, h) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
-                    inputPath = path_1.default.join(process.cwd(), "images/".concat(input, ".jpg"));
-                    output = path_1.default.join(process.cwd(), "resized_images/resized_".concat(input, ".jpg"));
+                    console.log(w, h, input);
+                    inputPath = path_1.default.join(process.cwd(), "images/".concat(input, ".png"));
+                    console.log(inputPath);
+                    output = path_1.default.join(process.cwd(), "images/resized_".concat(input, ".png"));
                     return [4 /*yield*/, (0, sharp_1.default)(inputPath).resize(w, h).toFile(output)];
                 case 1:
                     _a.sent();

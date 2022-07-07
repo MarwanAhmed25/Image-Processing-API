@@ -57,7 +57,7 @@ route.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                 file = fileName;
                 w = parseInt(width);
                 h = parseInt(height);
-                image = path_1.default.join(process.cwd(), "resized_images/resized_".concat(fileName, ".jpg"));
+                image = path_1.default.join(process.cwd(), "resized_images/resized_".concat(fileName, ".png"));
                 if (!fs_1.default.existsSync(image)) return [3 /*break*/, 1];
                 res.status(200).sendFile(image);
                 return [3 /*break*/, 4];

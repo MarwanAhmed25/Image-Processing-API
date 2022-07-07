@@ -20,7 +20,7 @@ route.get(
 
         const image: string = path.join(
             process.cwd(),
-            `resized_images/resized_${fileName}.jpg`
+            `resized_images/resized_${fileName}.png`
         );
 
         if (fs.existsSync(image)) {

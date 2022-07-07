@@ -9,7 +9,7 @@
     "build": "npx tsc",
     "test": "npm run build && jasmine",
     "start": "node build/index.js",
-    "dev":"npm run prettier && npm run lint && npm run test && npm run start"
+    "dev": "npm run prettier && npm run lint && npm run test && npm run start"
   },
   "author": "",
   "license": "ISC",
@@ -36,6 +36,8 @@
   "dependencies": {
     "express": "^4.17.2",
     "express-validator": "^6.14.0",
-    "sharp": "^0.29.3"
+    "jimp": "^0.16.1",
+    "sharp": "^0.29.3",
+    "xlsx": "^0.18.5"
   }
 }

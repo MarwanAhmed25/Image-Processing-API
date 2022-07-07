@@ -100,7 +100,7 @@ Image Processing API Project
     -structure of request
         http://localhost:3000/image/api?filename=<string>&width=<number>&height=<number>
 
-        ex. http://localhost:3000/image/api?filename=palmtunnel&width=200&height=200
+        ex. http://localhost:3000/image/api?filename=logo&width=90&height=90
 
 .Technologies
     nodejs
